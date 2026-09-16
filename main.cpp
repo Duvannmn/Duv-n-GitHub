@@ -1,4 +1,4 @@
- #include <iostream>
+  #include <iostream>
 #include <vector>
 #include <string>
 
@@ -92,6 +92,21 @@ void mostrarTareas(const vector<Tarea>& tareas) {
 }
 
 // Marca una tarea como completada
+void completarTarea(vector<Tarea>&tareas){
+    
+// Imprimir tareas
+mostrarTareas(tareas);
+// Numero de tarea a completarTarea
+int numeroTarea;
+cout << "Seleccione la tarea completada: ";
+cin >> numeroTarea;
+if (numeroTarea <1 or numeroTarea > tareas.size()){
+    cout << "Tarea invalida";
+    return;
+}
+tareas[numeroTarea -1].completada = true;
+cout << "Tarea completada correctamente" << end1;
+}
 // void completarTarea(vector<Tarea>& tareas) {
 // 
 // }
