@@ -1,4 +1,4 @@
-  #include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 
@@ -8,13 +8,12 @@ using namespace std;
 struct Tarea {
     string descripcion;
     bool completada;
+    string prioridad;
 };
 
 // Prototipos
 void agregarTarea(vector<Tarea>& tareas);
-
 void mostrarTareas(const vector<Tarea>& tareas);
-
 void completarTarea(vector<Tarea>& tareas);
 
 int main() {
@@ -65,7 +64,8 @@ void agregarTarea(vector<Tarea>& tareas) {
         cout <<"La tarea no puede estar vacía";
         return;
     }
-    
+    cout << "Ingrese la prioridad";
+    getline(cin, nueva.prioridad);
     nueva.completada = false;
     
     tareas.push_back(nueva);
@@ -87,6 +87,8 @@ void mostrarTareas(const vector<Tarea>& tareas) {
         }
         
         cout <<tareas[i].descripcion << endl;
+        
+        cout << tareas[i].prioridad << endl;
      }
          
 }
@@ -107,6 +109,4 @@ if (numeroTarea <1 or numeroTarea > tareas.size()){
 tareas[numeroTarea -1].completada = true;
 cout << "Tarea completada correctamente" << endl;
 }
-// void completarTarea(vector<Tarea>& tareas) {
-// 
-// }
+
